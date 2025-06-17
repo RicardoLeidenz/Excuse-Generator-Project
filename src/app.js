@@ -10,11 +10,13 @@ let when = [
 ];
 
 function generateExcuse() {
-  document.getElementById("excuse").innerHTML = who[
-    Math.floor(Math.random() * who.length)
-  ]++;
-  action[Math.floor(Math.random() * action.length)] +
+  document.getElementById("excuse").innerHTML =
+    who[Math.floor(Math.random() * who.length)] +
+    " " +
+    action[Math.floor(Math.random() * action.length)] +
+    " " +
     what[Math.floor(Math.random() * what.length)] +
+    " " +
     when[Math.floor(Math.random() * when.length)];
 }
 window.onload = generateExcuse;
