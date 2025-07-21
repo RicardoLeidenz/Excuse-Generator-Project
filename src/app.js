@@ -11,12 +11,18 @@ let when = [
 
 function generateExcuse() {
   document.getElementById("excuse").innerHTML =
-    who[Math.floor(Math.random() * who.length)] +
+    getRandomIndex(who) +
     " " +
-    action[Math.floor(Math.random() * action.length)] +
+    getRandomIndex(action) +
     " " +
-    what[Math.floor(Math.random() * what.length)] +
+    getRandomIndex(what) +
     " " +
-    when[Math.floor(Math.random() * when.length)];
+    getRandomIndex(when);
 }
+
+function getRandomIndex(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+document.getElementById("excuse").innerHTML = generateExcuse;
 window.onload = generateExcuse;
